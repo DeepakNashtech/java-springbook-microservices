@@ -1,0 +1,40 @@
+spring:
+  profiles:
+    active: dev
+
+# Common settings for all profiles
+---
+spring:
+  jpa:
+    show-sql: true
+
+# Development profile
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+# Production profile
+---
+spring:
+  config:
+    activate:
+      on-profile: prod
+  datasource:
+    url: jdbc:postgresql://localhost:5432/javaprac
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
