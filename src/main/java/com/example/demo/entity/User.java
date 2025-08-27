@@ -16,4 +16,13 @@ public class User {
 
     @Column(nullable = false, unique = true)
     private String email;
+
+    @Column(nullable = false)
+    private String password;
+
+    @Column
+    private String roles="ROLE_USER";
+
+    @Column(nullable = false)
+    private  boolean enabled = true;
 }

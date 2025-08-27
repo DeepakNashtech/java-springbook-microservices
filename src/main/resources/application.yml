@@ -22,6 +22,10 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
+app:
+  jwt:
+    secret: "SomthingNotToBeSharedWithStrangersAndTools"
+    expiration-ms: 3600000
 
 # Production profile
 ---
@@ -38,3 +42,7 @@ spring:
     hibernate:
       ddl-auto: validate
     show-sql: false
+app:
+  jwt:
+    secret: "SomthingNotToBeSharedWithStrangersAndTools"
+    expiration-ms: 3600000
